@@ -1,5 +1,6 @@
 # Suggestions
 
+I'm pretty impressed with what you've done here, the rest of this document will focus on how to improve it.
 I'm mostly going to provide feedback on version 3 of your script since you have the most code there
 
 ## Naming Files: use `kebab-caseed-file-names.py` to name your files
@@ -40,7 +41,7 @@ You will often find yourself working with multiple python projects on the same c
 
 ### Linting
 
-Programming languages have a grammar and syntax that are non-optional but beyond that there are code style conventions that most people adhere to. There is something called "linting" that will automatically help you avoid both style and syntax mistakes _before_ you run your code. You can invoke these tools using the command line but most of the time they will be integrated with your editor and will show you issues as you type, you can think about this kind of like a highly configurable spell checker with various "rules" that you can configure. Teams will add and remove these rules and enforce them automatically in their code integration pipelines. Some will be turned on as warnings and others will be strictly enforced. Some linters can also automatically "fix" some issues in your code and automatically format it for you.
+Programming languages have a grammar and syntax that are non-optional but beyond that there are code style conventions that most people adhere to. There is something called "linting" that will automatically help you avoid both style and syntax mistakes _before_ you run your code. You can invoke these tools using the command line but most of the time they will be integrated with your editor and will show you issues as you type, you can think about this kind of like a highly configurable spell checker with various "rules" that you can configure. Teams will add and remove these rules and enforce them automatically in their code integration pipelines. Some will be turned on as warnings and others will be strictly enforced. Some linters can also automatically "fix" some issues in your code and automatically format it for you. For example `autopep8` will automatically format your python code.
 
 Python is somewhat unique in that the language maintainers have provided a recommended style guide that is widely conformed to within the industry, this is called PEP-8 and it is a good thing to know. Most teams writing python use PEP-8 as a baseline and then relax some of its recommendations and add others so that the style is consistent across the codebase. Writing "Clean Code" will help you greatly both in reading and maintaining your own code, but also sharing it.
 

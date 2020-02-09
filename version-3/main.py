@@ -4,10 +4,6 @@ import random
 
 from constants import FISH
 
-
-print(FISH)
-
-
 def initializeGame():
     # Game input prompts anf variables
     # input_num = random.randint(1, 3)
