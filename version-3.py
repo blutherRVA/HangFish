@@ -6,15 +6,15 @@ print("Welcome to HangFish")
 print("Rules: Guess letters for the word, (which will inevitably be a fish), Once you piece the letters together, guess the word!")
 
 
-fish = ["tuna","bass","hake"]
-letters = ["t","u","n","a","b","a","s","s","h","a","k","e"]
+
 
 import random
 
 # Initiate turtle module, window
 import turtle
-wn=turtle.Screen()
-wn.title("HangFish 3.Bajillion")
+
+
+
 
 # Input game variables
 letter_1 = "_ "
@@ -22,9 +22,7 @@ letter_2 = "_ "
 letter_3 = "_ "
 letter_4 = "_ "
 
-# game script
 
-letters_t = turtle.Turtle()
 letters_t.hideturtle()
 letters_t.speed(0)
 letters_t.color("black")
@@ -33,29 +31,10 @@ letters_t.goto(0, 260)
 letters_t.write("Word:" + letter_1 + letter_2 + letter_3 + letter_4 , align="center",font=("Courier", 20, "normal"))
 
 
-# Input turtle settings
-pen = turtle.Turtle()
-pen.speed(0)
-pen.color("black")
-pen.penup()
 
 
-# Here is where the gallows and noose are drawn
-pen.goto(0,-150)
-pen.backward(50)
-pen.pendown()
-pen.backward(150)
-pen.left(90)
-pen.forward(350)
-pen.right(90)
-pen.forward(200)
-pen.right(90)
-pen.forward(80)
 
-# Game input prompts anf variables
-input_num = random.randint(1, 3)
-fish_index = (int(input_num) - 1)
-word = fish[fish_index]
+
 
 
 
