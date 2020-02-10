@@ -1,7 +1,8 @@
 # Suggestions
 
-I'm pretty impressed with what you've done here, the rest of this document will focus on how to improve it.
-I'm mostly going to provide feedback on version 3 of your script since you have the most code there
+I'm pretty impressed with what you've done here, this must have taken you quite a while because it took me a while to re-implement it. There definitely is some room for improvement though and the rest of this document will focus on explaining how to improve it.
+You seem to be at the stage where you have a pretty strong grasp on control flow and how to import modules and invoke methods, the next thing you want to focus on is not just something that works, but something that is organized.
+I'm mostly going to provide feedback on version 3 of your script since you have the most code there.
 
 ## Naming Files: use `kebab-caseed-file-names.py` to name your files
 
@@ -50,6 +51,37 @@ This isn't going to be terribly important right now but I recommend that you sta
 https://dbader.org/blog/python-code-linting
 https://www.python.org/dev/peps/pep-0008/
 
-
-
 ### Modules
+
+# TO MENTION
+
+- don't deeply nest if statements
+- separate code into functions
+- group functions into classes / modules
+- DRY out your code
+- don't use single letter variable names
+- don't use "letters[0]", use a tuple or a constant instead
+
+- Why do we use methods / classes
+
+  - abstraction (replace turtle in the future)
+  - re-organization (do things in a different order)
+  - encapsulation
+  - decrease cognitive overhead
+
+- why we don't use literals
+
+  - change once, change everywhere
+  - easier to understand
+
+- make things generic
+
+- if __name__ == '__main__':
+  - only if you're running the module directly
+  - learn about "magic" methods and properties
+
+- learn about string formatting
+
+# Challenges
+
+- Make this work for a list of input words, you shouldn't need a class for each individual fish
