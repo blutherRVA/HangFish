@@ -2,8 +2,7 @@
 from itertools import chain
 
 # SUGGESTION: use tuples over lists when the contents are immutable (meaning they can't/won't change)
-FISH = ("ttuna",)
-# FISH = ("tuna", "bass", "hake",)
+FISH = ("tuna", "bass", "hake",)
 LETTERS = tuple(set(chain.from_iterable(FISH)))
 
 # SUGGESTION: learn about multiline strings

@@ -42,49 +42,44 @@ You will often find yourself working with multiple python projects on the same c
 
 ### Linting
 
-Programming languages have a grammar and syntax that are non-optional but beyond that there are code style conventions that most people adhere to. There is something called "linting" that will automatically help you avoid both style and syntax mistakes _before_ you run your code. You can invoke these tools using the command line but most of the time they will be integrated with your editor and will show you issues as you type, you can think about this kind of like a highly configurable spell checker with various "rules" that you can configure. Teams will add and remove these rules and enforce them automatically in their code integration pipelines. Some will be turned on as warnings and others will be strictly enforced. Some linters can also automatically "fix" some issues in your code and automatically format it for you. For example `autopep8` will automatically format your python code.
+Programming languages have a grammar and syntax that are non-optional but beyond that there are code style conventions for each language that most people adhere to. There is something called "linting" that will automatically help you avoid both style and syntax mistakes _before_ you run your code. You can think about this kind of like a highly configurable spell checker with various "rules" that you can configure. You can invoke these tools using the command line but most of the time they will be integrated with your editor and will show you issues as you type, but you will have to do some setup. Teams will add and remove these rules and enforce them automatically using the linter from the command line in their code integration pipelines. Some will be turned on as warnings and others will be strictly enforced. Some linters can also automatically "fix" some issues in your code and automatically format it for you. For example `autopep8` will automatically format your python code.
 
-Python is somewhat unique in that the language maintainers have provided a recommended style guide that is widely conformed to within the industry, this is called PEP-8 and it is a good thing to know. Most teams writing python use PEP-8 as a baseline and then relax some of its recommendations and add others so that the style is consistent across the codebase. Writing "Clean Code" will help you greatly both in reading and maintaining your own code, but also sharing it.
+Python is somewhat unique in that the language maintainers have provided a recommended style guide that is widely conformed to within the industry, this is called PEP-8 and it is a good thing to know. Most teams writing python use [PEP-8](https://www.python.org/dev/peps/pep-0008/) as a baseline and then relax some of its recommendations and add others so that the style is consistent across the codebase. Writing "Clean Code" will help you greatly both in reading and maintaining your own code, but also sharing it.
 
 This isn't going to be terribly important right now but I recommend that you start learning about it because it will put you ahead of the pack in many ways.
 
 https://dbader.org/blog/python-code-linting
 https://www.python.org/dev/peps/pep-0008/
 
-### Modules
+## Modules, Classes, Functions
 
-# TO MENTION
+You should organize your code by purpose into modules.
+Generally you want one module to contain one "thing", this can be a class or a function or a group of constants.
+Rather than having a bunch of code at the top level of one module, break things up into classes and functions that group and encapsulate a particular "functionality" or a group of related functionalities.
+Classes can be used to encapsulate state.
+You create instances of a class, and you should read up on this.
+https://docs.python.org/3/tutorial/classes.html
 
-- don't deeply nest if statements
-- separate code into functions
-- group functions into classes / modules
-- DRY out your code
-- don't use single letter variable names
-- don't use "letters[0]", use a tuple or a constant instead
+Using these features will help you DRY (Dont Repeat Yourself) out your code, which is a desireable quality.
 
-- Why do we use methods / classes
+## List comprehensions
 
-  - abstraction (replace turtle in the future)
-  - re-organization (do things in a different order)
-  - encapsulation
-  - decrease cognitive overhead
+There are some places where I've used the following syntax, which is used to iterate through an existing list and create a new one.
 
-- why we don't use literals
+https://www.programiz.com/python-programming/list-comprehension
+https://treyhunner.com/2015/12/python-list-comprehensions-now-in-color/
 
-  - change once, change everywhere
-  - easier to understand
+```python
+[ thing for thing in listOfThings ]
+```
 
-- make things generic
+## General Recommendations
 
-- if __name__ == '__main__':
-  - only if you're running the module directly
-  - learn about "magic" methods and properties
-
-- learn about string formatting
-- use data structures
-- classes are custom data structures
-- **kwargs syntax
-
-# Challenges
-
-- Make this work for a list of input words, you shouldn't need a class for each individual fish
+- don't deeply nest if statements, at most you should have one if statement nested inside another. If you find that you have three or more, it's a good indication that you need to break things up into functions.
+- don't use single letter variable names, those are convenient but they make it harder for other people to read your code.
+- if **name** == '**main**':
+  - https://stackoverflow.com/questions/419163/what-does-if-name-main-do
+- use magic methods to make things iterable https://rszalski.github.io/magicmethods/
+- learn about string formatting https://docs.python.org/3/library/string.html
+- use data structures https://docs.python.org/3/tutorial/datastructures.html
+- \*\*kwargs syntax https://realpython.com/python-kwargs-and-args/
