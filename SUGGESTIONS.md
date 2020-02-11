@@ -81,6 +81,9 @@ https://www.python.org/dev/peps/pep-0008/
   - learn about "magic" methods and properties
 
 - learn about string formatting
+- use data structures
+- classes are custom data structures
+- **kwargs syntax
 
 # Challenges
 

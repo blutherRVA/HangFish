@@ -1,106 +1,139 @@
+import turtle
+
 
 class FishDrawer():
 
-    __init__():
+    def __init__(self):
+        self.pen = turtle.Turtle()
+        self.pen.speed(0)
+        self.pen.color("black")
+        self.pen.penup()
 
-        pen = turtle.Turtle()
-        eye = turtle.Turtle()
-        gills = turtle.Turtle()
-        p_fin = turtle.Turtle()
+        self.eye = turtle.Turtle()
+        self.gills = turtle.Turtle()
+        self.p_fin = turtle.Turtle()
 
-        pen.speed(0)
-        pen.color("black")
-        pen.penup()
+        self.n = 0
+        self.iteration_steps = [
+            self.drawFace,
+            self.missTwo,
+            self.drawEyes,
+            self.drawGills,
+            self.drawFishOutline,
+            self.missSix,
+            self.drawEndTail,
+            self.missEight,
+            self.missNine,
+            self.drawPectoralFin,
+        ]
 
-        wn.title("HangFish 3.Bajillion")
+        self.pen.hideturtle()
+        self.eye.hideturtle()
+        self.gills.hideturtle()
+        self.p_fin.hideturtle()
 
-        # game script
+        self.drawGallows()
 
-    def printLetters():
-        self.letters_t.write(
-            self.word_template.format(self.letter_1, self.letter_2,
-                                      self.letter_3, self.letter_4),
-            align="center",
-            font=self.font_settings)
 
-    def draw_gallows():
+    def __iter__(self):
+        self.n = 0
+        return self
+
+    def __next__(self):
+        if self.n <= len(self.iteration_steps):
+            index = self.n
+            self.n += 1
+            return self.iteration_steps[index]
+        else:
+            raise StopIteration
+
+    def missTwo(self):
+        self.pen.forward(75)
+        self.pen.backward(75)
+        self.pen.right(60)
+
+    def missSix(self):
+        self.pen.forward(40)
+        self.pen.left(120)
+
+    def missEight(self):
+        self.pen.right(20)
+        self.pen.forward(90)
+        self.pen.left(50)
+
+    def missNine(self):
+        self.pen.forward(40)
+        self.pen.hideturtle()
+
+    def drawGallows(self):
         # Here is where the gallows and noose are drawn
-        pen.goto(0, -150)
-        pen.backward(50)
-        pen.pendown()
-        pen.backward(150)
-        pen.left(90)
-        pen.forward(350)
-        pen.right(90)
-        pen.forward(200)
-        pen.right(90)
-        pen.forward(80)
+        self.pen.goto(0, -150)
+        self.pen.backward(50)
+        self.pen.pendown()
+        self.pen.backward(150)
+        self.pen.left(90)
+        self.pen.forward(350)
+        self.pen.right(90)
+        self.pen.forward(200)
+        self.pen.right(90)
+        self.pen.forward(80)
 
-    def loser():
-        pen.penup()
-        pen.goto(0, -260)
-        pen.write("You have exceeded your ten guesses. YOU LOSE!",
-                  align="center", font=("Courier", 20, "normal"))
-        pen.penup()
-        pen.goto(0, -290)
-        pen.write("Enter any input to exit the game and start over",
-                  align="center", font=("Courier", 15, "normal"))
+    def drawEyes(self):
+        self.eye.penup()
+        self.eye.goto(-10, 70)
+        self.eye.pendown()
+        self.eye.color("black", "black")
+        self.eye.begin_fill()
+        self.eye.shape("circle")
+        self.eye.shapesize(stretch_wid=.4, stretch_len=.4)
+        self.eye.end_fill()
+        self.eye.penup()
+        self.eye.showturtle()
 
-    def drawEyes():
-        eye.penup()
-        eye.goto(-10, 70)
-        eye.pendown()
-        eye.color("black", "black")
-        eye.begin_fill()
-        eye.shape("circle")
-        eye.shapesize(stretch_wid=.4, stretch_len=.4)
-        eye.end_fill()
-        eye.penup()
-
-    def drawFace():
+    def drawFace(self):
         # Here is where the fishes face is drawn, miss 1
-        pen.right(30)
-        pen.forward(75)
-        pen.backward(75)
-        pen.left(60)
+        self.pen.right(30)
+        self.pen.forward(75)
+        self.pen.backward(75)
+        self.pen.left(60)
 
-    def drawGills():
-        gills.hideturtle()
-        gills.penup()
-        gills.goto(0, 50)
-        gills.pendown()
-        gills.left(20)
-        gills.forward(20)
-        gills.backward(20)
-        gills.left(140)
-        gills.forward(20)
-        gills.penup()
+    def drawGills(self):
+        self.gills.hideturtle()
+        self.gills.penup()
+        self.gills.goto(0, 50)
+        self.gills.pendown()
+        self.gills.left(20)
+        self.gills.forward(20)
+        self.gills.backward(20)
+        self.gills.left(140)
+        self.gills.forward(20)
+        self.gills.penup()
 
-    def drawFishOutline():
-        pen.forward(75)
-        pen.left(30)
-        pen.left(20)
-        pen.forward(90)
-        pen.right(50)
+    def drawFishOutline(self):
+        self.pen.forward(75)
+        self.pen.left(30)
+        self.pen.left(20)
+        self.pen.forward(90)
+        self.pen.right(50)
 
-    def drawPectoralFin():
-        p_fin.penup()
-        p_fin.goto(0, 30)
-        p_fin.left(90)
-        p_fin.pendown()
-        p_fin.color("black", "white")
-        p_fin.begin_fill()
-        p_fin.shape("triangle")
-        p_fin.shapesize(stretch_wid=.5, stretch_len=1)
-        p_fin.end_fill()
-        p_fin.penup()
+    def drawPectoralFin(self):
+        self.p_fin.penup()
+        self.p_fin.goto(0, 30)
+        self.p_fin.left(90)
+        self.p_fin.pendown()
+        self.p_fin.color("black", "white")
+        self.p_fin.begin_fill()
+        self.p_fin.shape("triangle")
+        self.p_fin.shapesize(stretch_wid=.5, stretch_len=1)
+        self.p_fin.end_fill()
+        self.p_fin.penup()
 
-    def drawEndTail():
+    def drawEndTail(self):
         # End tail + pen goes to other side of fish to reset, miss 7
-        pen.forward(54)
-        pen.penup()
-        pen.goto(0, 120)
-        pen.right(60)
-        pen.pendown()
-        pen.forward(75)
-        pen.right(30)
+        self.pen.forward(54)
+        self.pen.penup()
+        self.pen.goto(0, 120)
+        self.pen.right(60)
+        self.pen.pendown()
+        self.pen.forward(75)
+        self.pen.right(30)

@@ -5,9 +5,10 @@
 
 import random
 import sys
+import time
 import turtle
 
-from constants import FISH, MESSAGE
+from constants import FISH
 from gui import GameGUI
 from game import Game
 
@@ -15,14 +16,8 @@ if __name__ == '__main__':
 
     game = Game(max_turns = 10, fish_options = FISH, game_gui=GameGUI())
     game.printInstructions()
+    game.runGameLoop()
 
-    while not game.isOver():
-        guess = input("Next Guess?")
-        game.checkGuess(guess)
-
-    if game.didWin():
-        game.celebrate()
-    else:
-        game.shameLoser()
-
+    # sleep for 30 seconds before exiting
+    time.sleep(1000 * 30)
     sys.exit()
