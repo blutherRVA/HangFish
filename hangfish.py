@@ -1,7 +1,6 @@
 #This is Version 3 of Hangfish, where fish names are selected randomly, and all graphics and logic have been debugged
 
 
-
 print("Welcome to HangFish")
 print("Rules: Guess letters for the word, (which will inevitably be a fish), Once you piece the letters together, guess the word!")
 
@@ -14,7 +13,7 @@ import random
 # Initiate turtle module, window
 import turtle
 wn=turtle.Screen()
-wn.title("HangFish 3.Bajillion")
+wn.title("HangFish Game")
 
 # Input game variables
 letter_1 = "_ "
